@@ -1,4 +1,4 @@
-name: GitHub Action next2 flow to Docker hub 
+name: GitHub Action next2 flow to Docker hub
 
 on:
   push:
@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout code
         uses: actions/checkout@v2
 
@@ -19,11 +18,10 @@ jobs:
         uses: docker/setup-buildx-action@v1
 
       - name: Login to DockerHub
-        uses: docker/login-action@v1 
+        uses: docker/login-action@v1
         with:
-          username: ${{ secrets.DOCKER_HUB_USERNAME }}
-          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-
+          username: ${{ dshym }}
+          password: ${{ 368851fb-00ab-4e34-8457-186498ba0148 }}
 
       - name: Build and push
         id: docker_build
@@ -33,5 +31,4 @@ jobs:
           file: ./dockerfile.v1
           push: true
           tags: |
-            spg51/lab:ghfront1
-          
+            dshym/lab:ghfront1
